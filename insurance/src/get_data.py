@@ -2,6 +2,7 @@ from distutils.command.config import config
 import os
 import yaml
 import pandas as pd
+import numpy as np
 import argparse
 from pkgutil import get_data
 import configparser
@@ -15,13 +16,9 @@ def get_data(config_path):
     config=read_params(config_path)
     #print(config)
     data_path=config["data_source"]["s3_source"]
-    df=pd.read_csv(data_path, sep=",", encoding="utf-8")
-    print(df.head())
-
-
-
-
-
+    df=pd.read_csv(data_path, sep="," ,encoding='utf-8')
+    #print(df.head())
+    return df
 
 if __name__=="__main__":
     args=argparse.ArgumentParser()

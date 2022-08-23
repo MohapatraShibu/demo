@@ -2,15 +2,15 @@ base:
   project: medical_insurance
   random_state: 42
   target_col: charges
-data_source: 
+data_source:
   s3_source: source_data/insurance_production.csv
 
 load_data:
-  raw_data_csv: data/raw/insurance_production.csv
+  raw_dataset_csv: data/raw/insurance_production.csv
 
 split_data:
-  train_data: data/processed/train_insurance.csv
-  test_data: data/processed/test_insurance.csv
+  train_path: data/processed/train_insurance.csv
+  test_path:  data/processed/test_insurance.csv
   test_size: 0.2
 
 estimators:
